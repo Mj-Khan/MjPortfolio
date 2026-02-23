@@ -1,318 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[YOUR NAME] - Resume</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdul Mujeeb Khan | Mobile Application Developer</title>
 
-    <style>
-        :root {
-            --bg: #0f172a;
-            --card: #111827;
-            --accent: #38bdf8;
-            --text: #e5e7eb;
-            --muted: #94a3b8;
-        }
+<style>
+:root {
+    --bg: #0f172a;
+    --card: #111827;
+    --accent: #38bdf8;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body {
+    background: var(--bg);
+    color: var(--text);
+    scroll-behavior: smooth;
+}
 
-        body {
-            background: linear-gradient(135deg, #020617, #0f172a);
-            color: var(--text);
-        }
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(2, 6, 23, 0.7);
-            backdrop-filter: blur(10px);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: center;
-            z-index: 1000;
-        }
+nav h2 {
+    font-size: 18px;
+    color: var(--accent);
+}
 
-        nav a {
-            color: var(--muted);
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
-        }
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: 0.3s;
+}
 
-        nav a:hover {
-            color: var(--accent);
-        }
+nav a:hover {
+    color: var(--accent);
+}
 
-        section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 100px 20px;
-        }
+section {
+    padding: 100px 8%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
+.hero h1 {
+    font-size: 48px;
+}
 
-        .hero h2 {
-            color: var(--accent);
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
+.hero h3 {
+    color: var(--accent);
+    margin: 10px 0;
+    font-weight: 400;
+}
 
-        .hero p {
-            color: var(--muted);
-            max-width: 600px;
-            line-height: 1.6;
-        }
+.hero p {
+    max-width: 600px;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.6;
+}
 
-        h3 {
-            font-size: 26px;
-            margin-bottom: 30px;
-        }
+h2.section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
 
-        .about p {
-            color: var(--muted);
-            line-height: 1.7;
-        }
+.about p {
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 800px;
+}
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-        }
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
 
-        .skill {
-            background: var(--card);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #1e293b;
-            transition: 0.3s;
-        }
+.skill-card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+}
 
-        .skill:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
+.skill-card h4 {
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-weight: 500;
+}
 
-        .timeline {
-            border-left: 2px solid #1e293b;
-            padding-left: 30px;
-        }
+.skill-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
 
-        .timeline-item {
-            margin-bottom: 30px;
-        }
+.timeline {
+    border-left: 2px solid var(--accent);
+    padding-left: 30px;
+}
 
-        .timeline-item h4 {
-            font-size: 18px;
-        }
+.timeline-item {
+    margin-bottom: 40px;
+}
 
-        .timeline-item span {
-            color: var(--accent);
-            font-size: 13px;
-        }
+.timeline-item h4 {
+    font-size: 18px;
+}
 
-        .timeline-item p {
-            color: var(--muted);
-            margin-top: 8px;
-            line-height: 1.6;
-        }
+.timeline-item span {
+    font-size: 13px;
+    color: var(--accent);
+}
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
+.timeline-item p {
+    margin-top: 10px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 14px;
+}
 
-        .project-card {
-            background: var(--card);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #1e293b;
-            transition: 0.3s;
-        }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
+.project-card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
 
-        .project-card h4 {
-            margin-bottom: 10px;
-        }
+.project-card:hover {
+    transform: translateY(-5px);
+}
 
-        .project-card p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.6;
-        }
+.project-card h4 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
 
-        .education p {
-            color: var(--muted);
-            line-height: 1.6;
-        }
+.project-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
 
-        .contact a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+.contact a {
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 10px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+}
 
-        .contact-links {
-            margin-top: 10px;
-        }
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s ease;
+}
 
-        .contact-links a {
-            margin-right: 15px;
-            font-size: 14px;
-        }
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        .fade {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease;
-        }
-
-        .fade.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 34px;
-            }
-
-            nav {
-                flex-wrap: wrap;
-            }
-        }
-    </style>
+@media(max-width: 768px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
+    <h2>AMK</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
-<section id="home" class="hero">
-    <div>
-        <h1>[YOUR NAME]</h1>
-        <h2>[YOUR JOB TITLE]</h2>
-        <p>[SHORT PROFESSIONAL INTRODUCTION]</p>
+<section class="hero">
+    <div class="fade">
+        <h1>Abdul Mujeeb Khan</h1>
+        <h3>Mobile Application Developer | Flutter Expert | Learning Native Android</h3>
+        <p>
+            Mobile Application Developer with nearly 4 years of experience in cross-platform development using Flutter, 
+            building scalable mobile solutions with production-ready performance and modern UI/UX.
+        </p>
     </div>
 </section>
 
 <section id="about" class="about fade">
-    <h3>About Me</h3>
-    <p>[ABOUT ME DESCRIPTION]</p>
+    <h2 class="section-title">About Me</h2>
+    <p>
+        I am a Mobile Application Developer with 3 years and 11 months of professional experience specializing 
+        in Flutter development. I have contributed to production-grade applications deployed on the Play Store 
+        and App Store. My expertise lies in building clean, scalable architectures, optimizing performance, 
+        and crafting intuitive user experiences. I am currently expanding my skillset by learning native Android 
+        development using Kotlin.
+    </p>
 </section>
 
 <section id="skills" class="fade">
-    <h3>Skills</h3>
+    <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
-        <div class="skill">[SKILL]</div>
-        <div class="skill">[SKILL]</div>
-        <div class="skill">[SKILL]</div>
-        <div class="skill">[SKILL]</div>
-        <div class="skill">[SKILL]</div>
-        <div class="skill">[SKILL]</div>
+        <div class="skill-card">
+            <h4>Languages</h4>
+            <p>Dart, Kotlin</p>
+        </div>
+        <div class="skill-card">
+            <h4>Frameworks</h4>
+            <p>Flutter, Jetpack, Flutter Flow, BLoC, GetX, Riverpod</p>
+        </div>
+        <div class="skill-card">
+            <h4>Integrations</h4>
+            <p>RESTful APIs, Firebase, Stripe, GraphQL, Razorpay</p>
+        </div>
+        <div class="skill-card">
+            <h4>Tools</h4>
+            <p>Android Studio, Xcode, VS Code, Postman, Swagger, IntelliJ IDEA, Unity</p>
+        </div>
+        <div class="skill-card">
+            <h4>Version Control</h4>
+            <p>Git, GitHub, GitLab</p>
+        </div>
     </div>
 </section>
 
 <section id="experience" class="fade">
-    <h3>Work Experience</h3>
+    <h2 class="section-title">Work Experience</h2>
     <div class="timeline">
+
         <div class="timeline-item">
-            <h4>[JOB TITLE]</h4>
-            <span>[COMPANY] • [YEAR]</span>
-            <p>[DESCRIPTION]</p>
+            <h4>Member of Technical Staff - L2 (MTS-2)</h4>
+            <span>ZETEXA GLOBAL · Jun '24 — Present</span>
+            <p>
+                Contributed to core feature development and UI/UX optimization for a global eSIM application. 
+                Improved cart performance by reducing API overhead by 35%, implemented multi-currency support, 
+                delivered data roaming functionality, and supported Android eSIM installation via platform channels. 
+                Mentored junior developers and collaborated closely with QA and backend teams.
+            </p>
         </div>
+
         <div class="timeline-item">
-            <h4>[JOB TITLE]</h4>
-            <span>[COMPANY] • [YEAR]</span>
-            <p>[DESCRIPTION]</p>
+            <h4>Mobile Application Developer</h4>
+            <span>TYNYBAY Inc · Aug '21 — May '24</span>
+            <p>
+                Developed and launched mobile applications across multiple industries including education, job portals, 
+                EV solutions, and SaaS platforms. Led UI/UX initiatives, implemented authentication systems, integrated 
+                RESTful APIs, and resolved critical navigation and performance issues. Also contributed as Scrum Master 
+                and supported CI/CD initiatives.
+            </p>
         </div>
+
     </div>
 </section>
 
 <section id="projects" class="fade">
-    <h3>Projects</h3>
+    <h2 class="section-title">Projects</h2>
     <div class="projects-grid">
         <div class="project-card">
-            <h4>[PROJECT NAME]</h4>
-            <p>[PROJECT DESCRIPTION]</p>
+            <h4>Falek Tayyeb</h4>
+            <p>UAE job portal application simplifying job discovery and user experience.</p>
         </div>
         <div class="project-card">
-            <h4>[PROJECT NAME]</h4>
-            <p>[PROJECT DESCRIPTION]</p>
+            <h4>SplitEV</h4>
+            <p>EV charging station locator application for efficient station discovery.</p>
         </div>
         <div class="project-card">
-            <h4>[PROJECT NAME]</h4>
-            <p>[PROJECT DESCRIPTION]</p>
+            <h4>SuperConstruct</h4>
+            <p>Real estate and project management tool for tracking and operations.</p>
+        </div>
+        <div class="project-card">
+            <h4>Inspire ABA</h4>
+            <p>LMS application designed for educational content and assignment management.</p>
         </div>
     </div>
 </section>
 
-<section id="education" class="education fade">
-    <h3>Education</h3>
-    <p>[DEGREE / COURSE]</p>
-    <p>[INSTITUTION]</p>
-    <p>[YEAR]</p>
+<section id="education" class="fade">
+    <h2 class="section-title">Education</h2>
+    <div class="skill-card">
+        <h4>Diploma in Civil</h4>
+        <p>NAWAB SHAH ALAM KHAN COLLEGE OF ENGINEERING · Aug '17 — Dec '20</p>
+    </div>
 </section>
 
 <section id="contact" class="contact fade">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a></p>
-    <div class="contact-links">
-        <a href="[LINKEDIN]">LinkedIn</a>
-        <a href="[GITHUB]">GitHub</a>
-        <a href="[PORTFOLIO]">Portfolio</a>
-    </div>
+    <h2 class="section-title">Contact</h2>
+    <a href="mailto:mjkhan7124@gmail.com">mjkhan7124@gmail.com</a>
+    <a href="tel:+918919355784">+91 8919355784</a>
+    <a href="https://www.linkedin.com/in/abdul-mujeeb-khan-8360a3210/" target="_blank">LinkedIn</a>
 </section>
 
 <script>
-    const faders = document.querySelectorAll('.fade');
+const faders = document.querySelectorAll('.fade');
 
-    const appearOptions = {
-        threshold: 0.2
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
+const appear = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            observer.unobserve(entry.target);
-        });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
+        }
     });
+});
+
+faders.forEach(fader => appear.observe(fader));
 </script>
 
 </body>
